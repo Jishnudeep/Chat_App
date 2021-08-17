@@ -4,7 +4,7 @@ import { Container, Loader } from 'rsuite';
 import { useProfile } from '../context/profile.context';
 
 const PublicRoute = ({ children, ...routeProps }) => {
-  const { profile, isLoading } = useProfile();
+  const { isLoading, profile } = useProfile();
 
   if (isLoading && !profile) {
     return (
@@ -14,7 +14,7 @@ const PublicRoute = ({ children, ...routeProps }) => {
     );
   }
   if (profile && !isLoading) {
-    return <Redirect to="/signin" />;
+    return <Redirect to="/" />;
   }
   return <Route {...routeProps}>{children}</Route>;
 };

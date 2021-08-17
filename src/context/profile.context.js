@@ -34,10 +34,10 @@ export const ProfileProvider = ({ children }) => {
     });
 
     return () => {
+      authUnsub();
       if (userRef) {
         userRef.off();
       }
-      authUnsub();
     };
   }, []);
 
