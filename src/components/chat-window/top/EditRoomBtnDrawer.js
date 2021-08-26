@@ -35,7 +35,7 @@ const EditRoomBtnDrawer = () => {
   };
 
   return (
-    <>
+    <div>
       <Button block size="sm" color="blue" onClick={open}>
         Edit Room Information
       </Button>
@@ -65,7 +65,7 @@ const EditRoomBtnDrawer = () => {
           </Button>
         </Drawer.Footer>
       </Drawer>
-    </>
+    </div>
   );
 };
 export default memo(EditRoomBtnDrawer);
