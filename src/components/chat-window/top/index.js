@@ -24,7 +24,7 @@ const Top = () => {
               isMobile ? 'd-inline-block p-0 mr-2 text-blue link-unstyled' : ''
             }
           />
-          <span className="text-disapper">{name}</span>
+          <span className="text-disapper ml-2">{name}</span>
         </h4>
         <ButtonToolbar className="ws-nowrap">
           {isAdmin && <EditRoomBtnDrawer />}

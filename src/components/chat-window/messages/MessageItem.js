@@ -9,7 +9,7 @@ import PresenceDot from '../../PresenceDot';
 import IconBtnControl from './IconBtnControl';
 import ProfileInfoBtnModal from './ProfileInfoBtnModal';
 
-const MessageItem = ({ message, handleAdmin, handleLike }) => {
+const MessageItem = ({ message, handleAdmin, handleLike, handleDelete }) => {
   const { author, createdAt, text, likes, likeCount } = message;
   const isAdmin = useCurrentRoom(v => v.isAdmin);
   const admins = useCurrentRoom(v => v.admins);
@@ -68,6 +68,16 @@ const MessageItem = ({ message, handleAdmin, handleLike }) => {
           }}
           badgeContent={likeCount}
         />
+        {isAuthor && (
+          <IconBtnControl
+            isvisible={canShowIcon}
+            iconName="trash"
+            tooltip="Delete"
+            onClick={() => {
+              handleDelete(message.id);
+            }}
+          />
+        )}
       </div>
       <div>
         <span className="word-break-all">{text}</span>
